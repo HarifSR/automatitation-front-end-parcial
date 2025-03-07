@@ -85,7 +85,9 @@ document.getElementById('boton-log-in').addEventListener('click', (e) => {
 
     if (username === usuarioQuemado.username && password === usuarioQuemado.password) {
         alert("Inicio de sesión exitoso");
-        // Aquí podrías redirigir al usuario a otra página
+        // Ocultar el formulario de inicio de sesión
+        document.getElementById('fondo-oscuro').classList.remove('visible');
+        // Aquí podrías redirigir al usuario a otra página o realizar otras acciones
     } else {
         alert("Usuario o contraseña incorrectos");
     }
