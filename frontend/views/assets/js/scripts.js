@@ -55,95 +55,95 @@ window.addEventListener('DOMContentLoaded', event => {
 
 
 // Usuario quemado
-const usuarioQuemado = {
+const hardcodedUser = {
     username: "Harif",
     password: "Harif123!"
 };
 
 // Validación de correo
-const validarCorreo = (correo) => {
+const validateEmail = (email) => {
     const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return regex.test(correo);
+    return regex.test(email);
 };
 
 // Validación de seguridad de la contraseña
-const validarContraseñaSegura = (contraseña) => {
+const validateStrongPassword = (password) => {
     const regex = /^(?=.*[A-Z])(?=.*\d)(?=.*[@#$%^&¿?])[A-Za-z\d@#$%^&¿?]{8,}$/;
-    return regex.test(contraseña);
+    return regex.test(password);
 };
 
 // Validación de coincidencia de contraseñas
-const validarCoincidenciaContraseñas = (contraseña, confirmarContraseña) => {
-    return contraseña === confirmarContraseña;
+const validatePasswordMatch = (password, confirmPassword) => {
+    return password === confirmPassword;
 };
 
 // Evento de inicio de sesión
-document.getElementById('boton-log-in').addEventListener('click', (e) => {
+document.getElementById('button-log-in').addEventListener('click', (e) => {
     e.preventDefault();
     const username = document.getElementById('username-log-in').value;
     const password = document.getElementById('password-log-in').value;
 
-    if (username === usuarioQuemado.username && password === usuarioQuemado.password) {
-        alert("Inicio de sesión exitoso");
+    if (username === hardcodedUser.username && password === hardcodedUser.password) {
+        alert("Login successful");
         // Ocultar el formulario de inicio de sesión
-        document.getElementById('fondo-oscuro').classList.remove('visible');
+        document.getElementById('dark-background').classList.remove('visible');
         // Aquí podrías redirigir al usuario a otra página o realizar otras acciones
     } else {
-        alert("Usuario o contraseña incorrectos");
+        alert("Incorrect username or password");
     }
 });
 
 // Evento de registro
-document.getElementById('boton-sign-up').addEventListener('click', (e) => {
+document.getElementById('button-sign-up').addEventListener('click', (e) => {
     e.preventDefault();
-    const nombre = document.getElementById('nombre-sign-up').value;
-    const apellido = document.getElementById('apellido-sign-up').value;
-    const correo = document.getElementById('correo-sign-up').value;
-    const contraseña = document.getElementById('contraseña-sign-up').value;
-    const confirmarContraseña = document.getElementById('confirmarContraseña-sign-up').value;
+    const firstName = document.getElementById('first-name-sign-up').value;
+    const lastName = document.getElementById('last-name-sign-up').value;
+    const email = document.getElementById('email-sign-up').value;
+    const password = document.getElementById('password-sign-up').value;
+    const confirmPassword = document.getElementById('confirmPassword-sign-up').value;
 
-    if (!validarCorreo(correo)) {
-        alert("Por favor, ingrese un correo electrónico válido.");
+    if (!validateEmail(email)) {
+        alert("Please enter a valid email address.");
         return;
     }
 
-    if (!validarContraseñaSegura(contraseña)) {
-        alert("La contraseña debe contener mínimo 1 mayúscula, número y caracteres especiales (@#$%^&¿?).");
+    if (!validateStrongPassword(password)) {
+        alert("The password must contain at least 1 uppercase letter, number, and special characters (@#$%^&¿?).");
         return;
     }
 
-    if (!validarCoincidenciaContraseñas(contraseña, confirmarContraseña)) {
-        alert("Las contraseñas no coinciden.");
+    if (!validatePasswordMatch(password, confirmPassword)) {
+        alert("Passwords do not match.");
         return;
     }
 
-    alert("Registro exitoso");
+    alert("Registration successful");
     // Aquí podrías enviar los datos del formulario a un servidor o realizar otras acciones
 });
 
 // Mostrar/ocultar el formulario flotante
-const mostrarLogin = () => {
-    const fondoOscuro = document.getElementById('fondo-oscuro');
-    fondoOscuro.classList.toggle('visible');
-    document.querySelector('.section__formulario--log-in').classList.add('visible');
-    document.querySelector('.section__formulario--sign-up').classList.remove('visible');
+const showLogin = () => {
+    const darkBackground = document.getElementById('dark-background');
+    darkBackground.classList.toggle('visible');
+    document.querySelector('.section__form--log-in').classList.add('visible');
+    document.querySelector('.section__form--sign-up').classList.remove('visible');
 };
 
 // Cambiar entre formularios
-const cambiarFormulario = (action) => {
+const switchForm = (action) => {
     if (action === 'login') {
-        document.querySelector('.section__formulario--log-in').classList.add('visible');
-        document.querySelector('.section__formulario--sign-up').classList.remove('visible');
+        document.querySelector('.section__form--log-in').classList.add('visible');
+        document.querySelector('.section__form--sign-up').classList.remove('visible');
     } else if (action === 'signup') {
-        document.querySelector('.section__formulario--sign-up').classList.add('visible');
-        document.querySelector('.section__formulario--log-in').classList.remove('visible');
+        document.querySelector('.section__form--sign-up').classList.add('visible');
+        document.querySelector('.section__form--log-in').classList.remove('visible');
     }
 };
 
 // Cerrar el formulario al hacer clic fuera
-const fondoOscuro = document.getElementById('fondo-oscuro');
-fondoOscuro.addEventListener('click', (e) => {
-    if (e.target === fondoOscuro) {
-        fondoOscuro.classList.remove('visible');
+const darkBackground = document.getElementById('dark-background');
+darkBackground.addEventListener('click', (e) => {
+    if (e.target === darkBackground) {
+        darkBackground.classList.remove('visible');
     }
 });

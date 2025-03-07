@@ -14,7 +14,7 @@
 
 
 /* Estilos para el fondo oscuro */
-.fondo-oscuro {
+.dark-background {
   display: none;
   position: fixed;
   top: 0;
@@ -27,12 +27,12 @@
   z-index: 1000;
 }
 
-.fondo-oscuro.visible {
+.dark-background.visible {
   display: flex;
 }
 
 /* Estilos para el contenedor del formulario */
-.contenedor-formulario {
+.form-container {
   background: #fff;
   padding: 20px;
   border-radius: 10px;
@@ -51,8 +51,8 @@
 }
 
 /* Estilos adicionales para los botones y campos de entrada */
-.boton {
-  background-color: #007bff;
+.button {
+  background-color: #1abc9c;
   color: white;
   padding: 10px 20px;
   border: none;
@@ -61,7 +61,7 @@
   margin-top: 10px;
 }
 
-.boton__formulario--cambiar {
+.button__form--switch {
   background-color: #6c757d;
 }
 
@@ -76,13 +76,14 @@ input {
 .link {
   display: block;
   margin: 10px 0;
-  color: #007bff;
+  color: #1abc9c;
   text-decoration: none;
 }
 
 .link:hover {
   text-decoration: underline;
 }
+
 
 
 
