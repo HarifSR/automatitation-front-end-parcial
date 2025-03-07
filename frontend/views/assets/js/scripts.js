@@ -118,7 +118,8 @@ document.getElementById('button-sign-up').addEventListener('click', (e) => {
     }
 
     alert("Registration successful");
-    // Aquí podrías enviar los datos del formulario a un servidor o realizar otras acciones
+    // Cambiar al formulario de inicio de sesión después del registro exitoso
+    switchForm('login');
 });
 
 // Mostrar/ocultar el formulario flotante
