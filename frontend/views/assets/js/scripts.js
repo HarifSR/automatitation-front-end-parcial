@@ -135,3 +135,10 @@ const switchForm = (action) => {
         document.querySelector('.section__form--log-in').classList.remove('visible');
     }
 };
+
+const darkBackground = document.getElementById('dark-background');
+darkBackground.addEventListener('click', (e) => {
+    if (e.target === darkBackground) {
+        darkBackground.classList.remove('visible');
+    }
+});
