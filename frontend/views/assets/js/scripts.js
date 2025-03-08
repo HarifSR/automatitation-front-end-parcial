@@ -90,3 +90,31 @@ document.getElementById('button-log-in').addEventListener('click', (e) => {
         alert("Incorrect username or password");
     }
 });
+
+document.getElementById('button-sign-up').addEventListener('click', (e) => {
+    e.preventDefault();
+    const firstName = document.getElementById('first-name-sign-up').value;
+    const lastName = document.getElementById('last-name-sign-up').value;
+    const email = document.getElementById('email-sign-up').value;
+    const password = document.getElementById('password-sign-up').value;
+    const confirmPassword = document.getElementById('confirmPassword-sign-up').value;
+
+    if (!validateEmail(email)) {
+        alert("Please enter a valid email address.");
+        return;
+    }
+
+    if (!validateStrongPassword(password)) {
+        alert("The password must contain at least 1 uppercase letter, number, and special characters (@#$%^&¿?).");
+        return;
+    }
+
+    if (!validatePasswordMatch(password, confirmPassword)) {
+        alert("Passwords do not match.");
+        return;
+    }
+
+    alert("Registration successful");
+    
+    switchForm('login');
+});
