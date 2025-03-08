@@ -118,3 +118,10 @@ document.getElementById('button-sign-up').addEventListener('click', (e) => {
     
     switchForm('login');
 });
+
+const showLogin = () => {
+    const darkBackground = document.getElementById('dark-background');
+    darkBackground.classList.toggle('visible');
+    document.querySelector('.section__form--log-in').classList.add('visible');
+    document.querySelector('.section__form--sign-up').classList.remove('visible');
+};
