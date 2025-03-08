@@ -75,3 +75,18 @@ const validateStrongPassword = (password) => {
 const validatePasswordMatch = (password, confirmPassword) => {
     return password === confirmPassword;
 };
+
+document.getElementById('button-log-in').addEventListener('click', (e) => {
+    e.preventDefault();
+    const username = document.getElementById('username-log-in').value;
+    const password = document.getElementById('password-log-in').value;
+
+    if (username === hardcodedUser.username && password === hardcodedUser.password) {
+        alert("Login successful");
+       
+        document.getElementById('dark-background').classList.remove('visible');
+        
+    } else {
+        alert("Incorrect username or password");
+    }
+});
