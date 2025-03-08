@@ -54,3 +54,24 @@ window.addEventListener('DOMContentLoaded', event => {
 });
 
 
+
+
+const hardcodedUser = {
+    username: "Harif",
+    password: "Harif123!"
+};
+
+const validateEmail = (email) => {
+    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return regex.test(email);
+};
+
+
+const validateStrongPassword = (password) => {
+    const regex = /^(?=.*[A-Z])(?=.*\d)(?=.*[@#$%^&¿?])[A-Za-z\d@#$%^&¿?]{8,}$/;
+    return regex.test(password);
+};
+
+const validatePasswordMatch = (password, confirmPassword) => {
+    return password === confirmPassword;
+};
