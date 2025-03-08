@@ -35,7 +35,7 @@ $path = TemplateController::path();
         include 'pages/contact/contact.php'; /* funciona */
         include 'modules\copyright.php'; /* no funcina */
         include 'modules\footer.php'; /* no funciona */
-        include 'pages/login/login.php';
+      
         ?>
 
 
